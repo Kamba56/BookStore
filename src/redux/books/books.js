@@ -1,5 +1,5 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 const initialState = [];
 
@@ -12,8 +12,7 @@ const addRemoveReducer = (state = initialState, action) => {
       ];
     case REMOVE_BOOK:
       return [
-        ...state.slice(0, state.indexOf(action.book)),
-        ...state.slice(state.indexOf(action.book) + 1, state.length),
+        ...state.filter((book) => book.id !== action.book.id),
       ];
     default:
       return state;
