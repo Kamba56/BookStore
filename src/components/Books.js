@@ -2,7 +2,7 @@ import React from 'react';
 import Book from './Book';
 import AddBook from './AddForm';
 
-class BookList extends React.PureComponent {
+class Books extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -42,4 +42,4 @@ class BookList extends React.PureComponent {
   };
 }
 
-export default BookList;
+export default Books;

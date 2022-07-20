@@ -6,7 +6,7 @@ const Book = (props) => {
   return (
     <div>
       <h3>{title}</h3>
-      <p>{author}</p>
+      <h4>{author}</h4>
       <div>
         <button type="button">Remove</button>
       </div>
