@@ -1,18 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Books from './components/Books';
 import Categories from './components/Categories';
-import BookList from './components/BookList';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<BookList />} />
-        <Route path="categories" element={<Categories />} />
-      </Routes>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Books />} />
+      <Route path="/categories" element={<Categories />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
