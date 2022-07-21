@@ -1,9 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux/es/exports';
+import { checkStatus } from '../redux/categories/categories';
 
-const Categories = () => (
-  <div>
-    <button type="button">Check Status</button>
-  </div>
-);
+const Categories = () => {
+  const check = useDispatch();
+
+  const handleClick = () => {
+    check(checkStatus);
+  };
+
+  return (
+    <div>
+      <button type="button" onClick={handleClick}>Check Status</button>
+    </div>
+  );
+};
 
 export default Categories;
