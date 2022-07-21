@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
@@ -5,17 +7,17 @@ const initialState = [
   {
     title: 'Tom and Jerry',
     author: 'Fred Wimbfrey',
-    id: 1,
+    id: uuidv4(),
   },
   {
     title: 'Tom and Jerry part 2',
     author: 'Fred Wimbfrey',
-    id: 2,
+    id: uuidv4(),
   },
   {
     title: 'Tom and Jerry part 3',
     author: 'Fred Wimbfrey',
-    id: 3,
+    id: uuidv4(),
   },
 ];
 

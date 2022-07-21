@@ -5,7 +5,6 @@ import AddBook from './AddForm';
 
 const Books = () => {
   const books = useSelector((state) => state.books);
-  // const [books] = useState(bookList);
 
   return (
     <div>
