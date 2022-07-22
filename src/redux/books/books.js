@@ -59,7 +59,7 @@ export const removeBook = (book) => ({
   book,
 });
 
-const loadAPI = (bookList) => ({
+export const loadAPI = (bookList) => ({
   type: LOAD_API,
   bookList,
 });
