@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux/es/hooks/useDispatch';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 // import { uuid } from 'uuidv4';
 import { addBook } from '../redux/books/books';
 
@@ -8,7 +8,8 @@ const AddBook = () => {
   const initialInputs = {
     author: '',
     title: '',
-    id: uuidv4(),
+    category: '',
+    // id: uuidv4(),
   };
 
   const [values, setValues] = useState(initialInputs);
@@ -29,6 +30,14 @@ const AddBook = () => {
     setValues(newValue);
   };
 
+  const catChange = (e) => {
+    const newValue = {
+      ...values,
+      category: e.target.value,
+    };
+    setValues(newValue);
+  };
+
   const add = useDispatch();
   const handleClick = (e) => {
     e.preventDefault();
@@ -42,6 +51,7 @@ const AddBook = () => {
       <form onSubmit={handleClick}>
         <input type="text" placeholder="Add Book" onChange={titleChange} required />
         <input type="text" placeholder="Author" onChange={authorChange} required />
+        <input type="text" placeholder="Category" onChange={catChange} required />
         <button type="submit">Add Book</button>
       </form>
     </div>
