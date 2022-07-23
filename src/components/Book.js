@@ -15,12 +15,42 @@ const Book = (props) => {
     del(removeBookThunk(id));
   };
   return (
-    <div>
-      <h3>{title}</h3>
-      <h4>{author}</h4>
-      <p>{category}</p>
-      <div>
-        <button type="button" onClick={handleClick}>Remove</button>
+    <div className="book">
+      <div className="content">
+        <div className="info">
+          <p>{category}</p>
+          <h3>{title}</h3>
+          <h4>{author}</h4>
+          <div className="buttons">
+            <button type="button">Comments</button>
+            <button type="button" onClick={handleClick}>
+              Remove
+            </button>
+            <button type="button">Edit</button>
+          </div>
+        </div>
+
+        <div className="progress-container">
+          <div className="circular-progress-container">
+            <div className="circular-progress" />
+          </div>
+          <div>
+            <p className="percent-complete">64%</p>
+            <p className="completed">Completed</p>
+          </div>
+          <div className="progress-divider" />
+          <div className="current-chapter-container">
+            <div>
+              <p>CURRENT CHAPTER</p>
+              <p>Chapter 17</p>
+            </div>
+            <div>
+              <button className="primary-button" type="button">
+                UPDATE PROGRESS
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
