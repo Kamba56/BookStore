@@ -48,11 +48,11 @@ const AddBook = () => {
   return (
     <div>
       <h2>Add new Book</h2>
-      <form onSubmit={handleClick}>
-        <input type="text" placeholder="Add Book" onChange={titleChange} required />
-        <input type="text" placeholder="Author" onChange={authorChange} required />
-        <input type="text" placeholder="Category" onChange={catChange} required />
-        <button type="submit">Add Book</button>
+      <form onSubmit={handleClick} className="add-form">
+        <input className="input" type="text" placeholder="Add Book" onChange={titleChange} required />
+        <input className="input" type="text" placeholder="Author" onChange={authorChange} required />
+        <input className="input" type="text" placeholder="Category" onChange={catChange} required />
+        <button type="submit" className="primary-button">Add Book</button>
       </form>
     </div>
   );

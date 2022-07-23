@@ -8,6 +8,8 @@ const Header = () => (
       <Link to="/">Books</Link>
       <Link to="/categories">Categories</Link>
     </nav>
+
+    <div className="avatar" />
   </header>
 );
 

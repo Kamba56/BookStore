@@ -14,7 +14,7 @@ const Books = () => {
   }, [load]);
 
   return (
-    <div>
+    <div className="container">
       {
         books.map((book) => (
           <Book
