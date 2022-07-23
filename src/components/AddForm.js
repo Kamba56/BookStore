@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux/es/hooks/useDispatch';
-// import { v4 as uuidv4 } from 'uuid';
-// import { uuid } from 'uuidv4';
-import { addBook } from '../redux/books/books';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook, addBookThunk } from '../redux/books/books';
 
 const AddBook = () => {
   const initialInputs = {
     author: '',
     title: '',
     category: '',
-    // id: uuidv4(),
+    id: uuidv4(),
   };
 
   const [values, setValues] = useState(initialInputs);
@@ -42,6 +41,7 @@ const AddBook = () => {
   const handleClick = (e) => {
     e.preventDefault();
     add(addBook(values));
+    add(addBookThunk(values));
     e.target.reset();
   };
 
