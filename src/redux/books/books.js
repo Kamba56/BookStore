@@ -1,11 +1,8 @@
-// import { v4 as uuidv4 } from 'uuid';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const LOAD_API = 'bookstore/books/LOAD_API';
-// const ADD_BOOK_TO_API = 'ADD_BOOK_TO_API';
-// const ADD_BOOK_TO_API = 'bookstore/books/ADD_BOOK_TO_API'
 
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/95Xn3hdGHIY8sUE2lYPk/';
 
@@ -75,11 +72,9 @@ export const addBookThunk = createAsyncThunk(
 
 //! ****** Action creators
 export const addBook = (book) => ({
-  // return ({
   type: ADD_BOOK,
   book,
 });
-// };
 
 // ! Remove book from API
 export const removeBookThunk = createAsyncThunk(
@@ -94,11 +89,8 @@ export const removeBookThunk = createAsyncThunk(
 
 // ! Remove action creator
 export const removeBook = (book) => ({
-  // removeBookThunk(book.id);
-  // return ({
   type: REMOVE_BOOK,
   book,
 });
-// };
 
 export default addRemoveReducer;
