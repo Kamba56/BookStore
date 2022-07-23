@@ -16,12 +16,12 @@ const Book = (props) => {
   };
   return (
     <div className="book">
-      <div className="book-content">
-        <div className="book-info">
+      <div className="content">
+        <div className="info">
           <p>{category}</p>
           <h3>{title}</h3>
           <h4>{author}</h4>
-          <div className="action-buttons">
+          <div className="buttons">
             <button type="button">Comments</button>
             <button type="button" onClick={handleClick}>
               Remove

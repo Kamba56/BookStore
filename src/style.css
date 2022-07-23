@@ -64,7 +64,7 @@ nav {
   padding: 2rem;
 }
 
-.book-content {
+.content {
   display: flex;
   justify-content: space-between;
 }
@@ -74,13 +74,13 @@ nav {
   align-items: center;
 }
 
-.book-info {
+.info {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.action-buttons {
+.buttons {
   display: flex;
   align-items: center;
   margin-top: 1.313rem;
