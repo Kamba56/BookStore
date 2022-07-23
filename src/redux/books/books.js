@@ -1,4 +1,4 @@
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
@@ -12,19 +12,19 @@ const initialState = [
     title: 'Tom and Jerry',
     author: 'Fred Wimbfrey',
     category: 'Animation',
-    // id: uuidv4(),
+    id: uuidv4(),
   },
   {
     title: 'Tom and Jerry part 2',
     author: 'Fred Wimbfrey',
     category: 'Animation',
-    // id: uuidv4(),
+    id: uuidv4(),
   },
   {
     title: 'Tom and Jerry part 3',
     author: 'Fred Wimbfrey',
     category: 'Animation',
-    // id: uuidv4(),
+    id: uuidv4(),
   },
 ];
 
@@ -64,10 +64,17 @@ export const loadAPI = (bookList) => ({
   bookList,
 });
 
-export const loadBookThunk = () => (() => (
-  fetch(`${baseURL}books`)
-    .then((response) => response.json())
-    .then((data) => loadAPI(Object.values(data).map((book) => book[0])))
-));
+export const loadBookThunk = () => (dispatch) => fetch(`${baseURL}books`)
+  .then((response) => response.json())
+  .then((data) => {
+    dispatch(loadAPI(
+      Object.keys(data).map(
+        (key) => ({
+          ...data[key][0],
+          id: key,
+        }),
+      ),
+    ));
+  });
 
 export default addRemoveReducer;
