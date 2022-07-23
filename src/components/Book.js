@@ -1,15 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/books';
+import { removeBook, removeBookThunk } from '../redux/books/books';
 
 const Book = (props) => {
-  const { title, author, category } = props;
+  const {
+    title, author, category, id,
+  } = props;
   const books = useSelector((state) => state.books);
 
   const del = useDispatch();
   const handleClick = () => {
-    del(removeBook(books.find((book) => book.title === title)));
+    del(removeBook(books.find((book) => book.id === id)));
+    del(removeBookThunk(id));
   };
   return (
     <div>
@@ -27,6 +30,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;
